@@ -3,6 +3,8 @@ import Modal from '../Modal';
 
 const PhotoList = ({ category }) => {
 
+  const [currentPhoto, setCurrrentPhoto] = useState();
+
   const [photos] = useState([
     {
       name: 'Grocery aisle',
@@ -104,7 +106,7 @@ const PhotoList = ({ category }) => {
   const currentPhotos = photos.filter((photo) => photo.category === category);
 
   const toggleModal = (image,i) => {
-    // current photo
+    setCurrrentPhoto({...image, index: i});
   }
 
   return (
